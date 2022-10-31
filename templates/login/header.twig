@@ -1,0 +1,18 @@
+{% if session_expired == true %}
+    <div id="modalOverlay">
+{% endif %}
+<div class="container{{ add_class }}">
+<div class="row">
+<div class="col-12">
+<a href="{{ 'https://www.rm-net.si/'|link }}" target="_blank" rel="noopener noreferrer" class="logo">
+<img src="{{ image('logo_right.png', 'pma_logo.png') }}" id="imLogo" name="imLogo" alt="..::RM-Net phpMyAdmin::.." border="0">
+</a>
+<h1>{{ 'Dobrodošli na %s'|trans|format('<bdo dir="ltr" lang="sl">..::RM-Net - DOV phpMyAdmin::..</bdo>')|raw }}</h1>
+
+<noscript>
+{{ "Javascript must be enabled past this point!"|trans|error }}
+</noscript>
+
+<div class="hide" id="js-https-mismatch">
+{{ "Obstaja neujemanje med HTTPS, navedenim na strežniku in odjemalcu. To lahko povzroči nedelovanje ..::RM-Net - DOV phpMyAdmin::.. ali varnostno tveganje. Popravite konfiguracijo strežnika, da bo HTTPS pravilno prikazan."|trans|error }}
+</div>
